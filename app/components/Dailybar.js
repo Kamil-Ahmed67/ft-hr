@@ -3,7 +3,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 
 export default function WeeklyEmployeeAttendanceChart() {
   return (
-    <BarChart
+    <BarChart className="border-2 rounded-xl"
       xAxis={[
         {
           scaleType: "band",

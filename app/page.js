@@ -7,7 +7,7 @@ export default function Home() {
       <div className="w-11/12 mx-auto mt-16">
         <AttendanceCards></AttendanceCards>
       </div>
-      <div>
+      <div className="w-11/12 mx-auto mt-5">
        <BasicBars></BasicBars>
       </div>
     </main>
