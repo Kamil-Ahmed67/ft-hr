@@ -66,7 +66,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`min-h-full bg-gradient-to-r from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col ${
+      className={`min-h-full bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col ${
         isCollapsed ? 'w-20' : 'w-64'
       } transition-all duration-300 ease-in-out`}
     >
