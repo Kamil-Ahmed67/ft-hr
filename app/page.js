@@ -1,6 +1,6 @@
-import AttendanceCards from "./components/AttendanceCards";
-import BasicBars from "./components/Dailybar";
-
+import dynamic from "next/dynamic";
+const AttendanceCards= dynamic(() => import("./components/AttendanceCards"));
+const BasicBars =dynamic(()=>import("./components/Dailybar"))
 export default function Home() {
   return (
     <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

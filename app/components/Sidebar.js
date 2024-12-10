@@ -44,7 +44,7 @@ const navElements = [
     icon: <HiOutlineUserGroup className="w-6 h-6" />,
     dropdown: true,
     subMenu: [
-      { title: 'Employee List', href: '/employee/list' },
+      { title: 'Employee List', href: '/employee' },
       { title: 'Add Employee', href: '/employee/add' },
     ],
   },
