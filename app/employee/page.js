@@ -2,14 +2,20 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { FaFileExcel } from "react-icons/fa";
 import { FaFileCsv } from "react-icons/fa";
 import EmployeeTable from "../components/EmployeeTable";
+import Link from "next/link";
 export default function Employee() {
   return (
     <div>
       {/* TITLE.ADD EMPLOYEE*/}
       <div className="border-b-2">
-        <div className="w-11/12 mx-auto flex justify-between items-center mt-4 ">
+        <div className="w-11/12 mx-auto flex justify-between items-center mt-4 py-4 ">
           <h3 className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ">Employee List</h3>
-          <button className="btn rounded-md bg-[#CAD0FE] hover:text-blue-800 text-gray-800 transition ease-out duration-700  font-medium text-sm md:text-base lg:text-lg mb-4"><IoMdAddCircleOutline className="text-xl" />Add Employee</button>
+          <Link href="/employee-entry">
+            <button className="btn rounded-md bg-[#CAD0FE] hover:text-blue-800 text-gray-800 transition ease-out duration-700 
+           font-medium text-sm md:text-base lg:text-lg mb-4">
+              <IoMdAddCircleOutline className="text-xl" />
+              Add Employee</button>
+          </Link>
         </div>
       </div>
       {/* EXCEL,CSV,SEARCH BAR */}

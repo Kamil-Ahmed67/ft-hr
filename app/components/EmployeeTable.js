@@ -123,7 +123,7 @@ export default function EmployeeTable() {
     <TableContainer component={Paper} sx={{ maxHeight: 440, overflow: 'auto' }}>
       <Table aria-label="simple-table">
         <TableHead>
-          <TableRow className='bg-blue-200' sx={{ position: 'sticky', top: 0, backgroundColor: 'white', zIndex: 1 }}>
+          <TableRow className='bg-[#CAD0FE] font-bold' sx={{ position: 'sticky', top: 0, backgroundColor: 'white', zIndex: 1 }}>
             <TableCell>SI</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Email</TableCell>
