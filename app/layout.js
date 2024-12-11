@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
             <Sidebar></Sidebar>
           </aside>
           <section className="flex-1">
-            <header>
+            <header  className="sticky top-0 z-50">
               <Navbar></Navbar>
             </header>
             <main className="min-h-[calc(200vh-232px)]">

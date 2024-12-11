@@ -66,12 +66,12 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`min-h-full bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col ${
+      className={`min-h-screen bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col sticky top-0 ${
         isCollapsed ? 'w-20' : 'w-64'
       } transition-all duration-300 ease-in-out`}
     >
       {/* Header */}
-      <div className="flex items-center justify-between h-20 bg-gradient-to-r from-[#F3E7E9] to-[#E3EEFF] border-b border-gray-300 p-4">
+      <div className="flex items-center justify-between h-16 bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] border-b border-gray-300 p-4">
         {!isCollapsed && (
           <Link href="/">
             <Image src="/images/ftex-logo.png" alt="Ftex Logo" width={150} height={30} />
@@ -81,7 +81,7 @@ const Sidebar = () => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="text-gray-700 focus:outline-none"
         >
-          {isCollapsed ? <AiOutlineMenu size={24} /> : <GoSidebarCollapse size={24} />}
+          {isCollapsed ? <AiOutlineMenu className='ml-2' size={24} /> : <GoSidebarCollapse size={24} />}
         </button>
       </div>
 

@@ -2,7 +2,7 @@
 
 export default function Navbar() {
   return (
-    <div className="navbar flex justify-between p-4 bg-gray-700 text-gray-50">
+    <div className="navbar flex justify-between p-2 bg-gray-700 text-gray-50">
       {/* Navbar Start */}
       <div className="navbar-start">
         <button
