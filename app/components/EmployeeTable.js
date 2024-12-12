@@ -242,17 +242,18 @@ export default function EmployeeTable() {
               zIndex: 1,
               backgroundColor: "#DAE1F3",
               fontWeight: "bold",
+              fontSize: "1rem", // Adjust the size as needed
             }}
           >
-            <TableCell sx={{ textAlign: 'center' }}>SI</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Name</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Email</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Mobile</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Status</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Salary</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Designation</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Department</TableCell>
-            <TableCell sx={{ textAlign: 'center' }}>Action</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>SI</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Name</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Email</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Mobile</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Status</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Salary</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Designation</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Department</TableCell>
+            <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -260,7 +261,7 @@ export default function EmployeeTable() {
             <TableRow
               key={row.id}
               sx={{
-                backgroundColor: '#ffffff', 
+                backgroundColor: '#ffffff',
                 "&:hover": { backgroundColor: '#f0f0f0' }, // Add hover effect
                 "&:last-child td, &:last-child th": { border: 0 },
               }}
@@ -284,29 +285,34 @@ export default function EmployeeTable() {
                   <IconButton
                     color="primary"
                     onClick={() => console.log("View", row.id)}
+                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
                   >
                     <FaEye />
                   </IconButton>
                   <IconButton
                     color="success"
                     onClick={() => console.log("Edit", row.id)}
+                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
                   >
                     <FaEdit />
                   </IconButton>
                   <IconButton
                     color="info"
                     onClick={() => console.log("Print", row.id)}
+                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
                   >
                     <FaPrint />
                   </IconButton>
                   <IconButton
                     color="error"
                     onClick={() => console.log("Delete", row.id)}
+                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
                   >
                     <FaRegTrashAlt />
                   </IconButton>
                 </Box>
               </TableCell>
+
             </TableRow>
           ))}
         </TableBody>

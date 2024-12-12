@@ -12,7 +12,7 @@ export default function Home() {
       <div className="w-11/12 mx-auto mt-10">
         <AttendanceCards></AttendanceCards>
       </div>
-      <div className="w-11/12 flex flex-col lg:flex-row gap-5 mx-auto mt-5">
+      <div className="w-11/12 flex flex-col lg:flex-row gap-5 mx-auto mt-3">
         <div className="w-3/5">
           <div className="rounded-lg shadow-sm"><BasicBars></BasicBars></div>
           <div className="flex mt-4 border-2 p-2 space-x-4 bg-white shadow-lg border-white  rounded-lg">
