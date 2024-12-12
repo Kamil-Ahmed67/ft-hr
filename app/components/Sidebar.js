@@ -19,19 +19,19 @@ const navElements = [
   {
     title: "Dashboard",
     href: "/",
-    icon: <AiOutlineDashboard className="w-6 h-6" />,
+    icon: <AiOutlineDashboard className="w-6 h-6" />, 
     dropdown: false,
   },
   {
     title: "Attendance",
     href: "/profile",
-    icon: <AiOutlineUser className="w-6 h-6" />,
+    icon: <AiOutlineUser className="w-6 h-6" />, 
     dropdown: false,
   },
   {
     title: "Award",
     href: "/award",
-    icon: <GrTrophy className="w-6 h-6" />,
+    icon: <GrTrophy className="w-6 h-6" />, 
     dropdown: true,
     subMenu: [
       { title: "Annual Awards", href: "/award/annual" },
@@ -41,7 +41,7 @@ const navElements = [
   {
     title: "Employee",
     href: "/employee",
-    icon: <HiOutlineUserGroup className="w-6 h-6" />,
+    icon: <HiOutlineUserGroup className="w-6 h-6" />, 
     dropdown: true,
     subMenu: [
       { title: "Employee List", href: "/employee" },
@@ -51,7 +51,7 @@ const navElements = [
   {
     title: "Settings",
     href: "/settings",
-    icon: <AiOutlineSetting className="w-6 h-6" />,
+    icon: <AiOutlineSetting className="w-6 h-6" />, 
     dropdown: false,
   },
 ];
@@ -89,26 +89,28 @@ const Sidebar = () => {
       <nav className="flex-1 mt-6 space-y-2">
         {navElements.map((navElement, index) => (
           <div key={navElement.title} className="relative group">
-            <div
-              className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
-                isCollapsed ? "justify-center" : ""
-              }`}
-              onClick={() => !isCollapsed && navElement.dropdown ? toggleDropdown(index) : null}
-            >
-              <div className="flex items-center justify-between w-full">
-                <div className="flex ml-2 items-center">
-                  {navElement.icon}
-                  {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
+            <Link href={navElement.href}>
+              <div
+                className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
+                  isCollapsed ? "justify-center" : ""
+                }`}
+                onClick={() => !isCollapsed && navElement.dropdown ? toggleDropdown(index) : null}
+              >
+                <div className="flex items-center justify-between w-full">
+                  <div className="flex ml-2 items-center">
+                    {navElement.icon}
+                    {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
+                  </div>
+                  {navElement.dropdown && !isCollapsed && (
+                    <AiOutlineDown
+                      className={`ml-2 transition-transform duration-300 ease-in-out ${
+                        activeDropdown === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
                 </div>
-                {navElement.dropdown && !isCollapsed && (
-                  <AiOutlineDown
-                    className={`ml-2 transition-transform duration-300 ease-in-out ${
-                      activeDropdown === index ? "rotate-180" : ""
-                    }`}
-                  />
-                )}
               </div>
-            </div>
+            </Link>
 
             {isCollapsed && (
               <div className="absolute left-20 top-1 z-50 bg-gray-100 text-gray-700 px-2 py-1 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
@@ -119,7 +121,7 @@ const Sidebar = () => {
             {/* Submenu (if dropdown is active) */}
             {navElement.dropdown && !isCollapsed && (
               <div
-                className={`ml-8 mt-2 space-y-2 overflow-hidden transition-all duration-1000 ease-in-out ${
+                className={`ml-8 mt-2 space-y-2 overflow-hidden transition-all duration-500 ease-in-out ${
                   activeDropdown === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
