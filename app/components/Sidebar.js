@@ -30,7 +30,7 @@ const navElements = [
   },
   {
     title: "Award",
-    href: null, // No href for main dropdown
+    href: null,
     icon: <GrTrophy className="w-6 h-6" />,
     dropdown: true,
     subMenu: [
@@ -40,7 +40,7 @@ const navElements = [
   },
   {
     title: "Employee",
-    href: null, // No href for main dropdown
+    href: null,
     icon: <HiOutlineUserGroup className="w-6 h-6" />,
     dropdown: true,
     subMenu: [
@@ -61,17 +61,17 @@ const Sidebar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+    if (!isCollapsed) setActiveDropdown(activeDropdown === index ? null : index);
   };
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col sticky top-0 ${
+      className={`min-h-screen bg-white text-gray-700 flex flex-col sticky top-0 ${
         isCollapsed ? "w-20" : "w-64"
       } transition-all duration-300 ease-in-out`}
     >
       {/* Header */}
-      <div className="flex items-center justify-between h-16 bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] border-b border-gray-300 p-4">
+      <div className="flex items-center justify-between h-16 bg-white border-b border-gray-300 p-4">
         {!isCollapsed && (
           <Link href="/">
             <Image src="/images/ftex-logo.png" alt="Ftex Logo" width={150} height={30} />
@@ -86,66 +86,79 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 mt-6 space-y-2">
-        {navElements.map((navElement, index) => (
-          <div key={navElement.title} className="relative group">
-            {navElement.dropdown ? (
-              <div
-                className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
-                  isCollapsed ? "justify-center" : ""
+      <nav
+  className={`flex-1 mt-6 space-y-2 ${
+    isCollapsed ? "flex flex-col items-center" : ""
+  }`}
+>
+  {navElements.map((navElement, index) => (
+    <div key={navElement.title} className="relative group">
+      {navElement.dropdown ? (
+        <div
+          className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
+            isCollapsed ? "justify-center" : ""
+          }`}
+          onClick={() => toggleDropdown(index)}
+        >
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center">
+              {navElement.icon}
+              {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
+            </div>
+            {!isCollapsed && (
+              <AiOutlineDown
+                className={`ml-2 transition-transform duration-300 ease-in-out ${
+                  activeDropdown === index ? "rotate-180" : ""
                 }`}
-                onClick={() => toggleDropdown(index)}
-              >
-                <div className="flex items-center justify-between w-full">
-                  <div className="flex items-center">
-                    {navElement.icon}
-                    {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
-                  </div>
-                  {!isCollapsed && (
-                    <AiOutlineDown
-                      className={`ml-2 transition-transform duration-300 ease-in-out ${
-                        activeDropdown === index ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </div>
-              </div>
-            ) : (
-              <Link href={navElement.href}>
-                <div
-                  className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
-                    isCollapsed ? "justify-center" : ""
-                  }`}
-                >
-                  <div className="flex items-center">
-                    {navElement.icon}
-                    {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
-                  </div>
-                </div>
-              </Link>
-            )}
-
-            {/* Submenu (if dropdown is active) */}
-            {navElement.dropdown && !isCollapsed && (
-              <div
-                className={`mt-2 text-center space-y-2 overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeDropdown === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                {navElement.subMenu.map((subItem) => (
-                  <Link
-                    href={subItem.href}
-                    key={subItem.title}
-                    className="block text-base p-2 w-full text-gray-700 hover:text-blue-800 hover:bg-slate-300"
-                  >
-                    {subItem.title}
-                  </Link>
-                ))}
-              </div>
+              />
             )}
           </div>
-        ))}
-      </nav>
+          {isCollapsed && (
+            <span className="absolute left-full ml-2 bg-white text-gray-700 p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+              {navElement.title}
+            </span>
+          )}
+        </div>
+      ) : (
+        <Link href={isCollapsed ? "#" : navElement.href}>
+          <div
+            className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
+              isCollapsed ? "justify-center" : ""
+            }`}
+          >
+            <div className="flex items-center">
+              {navElement.icon}
+              {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
+            </div>
+            {isCollapsed && (
+              <span className="absolute left-full ml-2 bg-white text-gray-700 p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                {navElement.title}
+              </span>
+            )}
+          </div>
+        </Link>
+      )}
+      {/* Submenu (if dropdown is active) */}
+      {navElement.dropdown && !isCollapsed && (
+        <div
+          className={`mt-2 text-center space-y-2 overflow-hidden transition-all duration-1000 ease-in-out ${
+            activeDropdown === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          {navElement.subMenu.map((subItem) => (
+            <Link
+              href={subItem.href}
+              key={subItem.title}
+              className="block text-base p-2 w-full text-gray-700 hover:text-blue-800 hover:bg-slate-300"
+            >
+              {subItem.title}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  ))}
+</nav>
 
       {/* Footer */}
       <div className="mb-6">
@@ -156,6 +169,11 @@ const Sidebar = () => {
         >
           <AiOutlineLogout className="w-6 h-6" />
           {!isCollapsed && <span className="ml-4 text-lg">Log Out</span>}
+          {isCollapsed && (
+            <span className="absolute left-full ml-2 bg-white text-gray-700 p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+              Log Out
+            </span>
+          )}
         </button>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { useState } from "react";
 function WeeklyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-xl"
+      className="border-2 rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -42,7 +42,7 @@ function WeeklyEmployeeAttendanceChart() {
 function MonthlyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-xl"
+      className="border-2 rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -70,7 +70,7 @@ function MonthlyEmployeeAttendanceChart() {
 function YearlyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-xl"
+      className="border-2 rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -104,7 +104,7 @@ export default function AttendanceDashboard() {
   };
 
   return (
-    <div className="relative bg-white">
+    <div className="relative ">
       <div
         className={`absolute z-10 bg-white ${
           isSidebarCollapsed ? "top-3 right-2" : "top-3 right-12"

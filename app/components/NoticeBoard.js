@@ -35,7 +35,7 @@ const NoticeCard = ({ title, description, date, onEdit, onDelete, onView }) => (
       display: 'flex',
       flexDirection: 'column',
       marginBottom: 2,
-      backgroundColor: '#f0f4f8',
+      backgroundColor: '#FFFFFF',
       transition: 'background-color 0.3s', 
       '&:hover': {
         backgroundColor: '#e0e7ed', // Hover effect color

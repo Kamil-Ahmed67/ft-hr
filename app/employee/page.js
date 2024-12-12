@@ -19,7 +19,7 @@ export default function Employee() {
         </div>
       </div>
       {/* EXCEL,CSV,SEARCH BAR */}
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto ">
         <div className="flex flex-col lg:flex-row justify-between items-center py-4">
           {/* Blank Section */}
           <div className="hidden lg:flex flex-grow"></div>
