@@ -190,7 +190,6 @@ export default function EmployeeEntry() {
                             </div>
                         </div>
                     </div>
-
                     {/* ADDITIONAL INFORMATION SECTION */}
                     <div>
                         <h2 className="text-lg font-bold mb-4">Additional Information</h2>

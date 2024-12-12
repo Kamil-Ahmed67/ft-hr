@@ -8,7 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import IconButton from '@mui/material/IconButton';
-import { FaEye, FaEdit, FaPrint, FaTrash } from 'react-icons/fa';
+import { FaEye, FaEdit, FaPrint } from 'react-icons/fa';
+import { FaRegTrashAlt } from "react-icons/fa";
 import Box from '@mui/material/Box';
 
 const tableData = [
@@ -300,7 +301,7 @@ export default function EmployeeTable() {
                     color="error"
                     onClick={() => console.log("Delete", row.id)}
                   >
-                    <FaTrash />
+                  <FaRegTrashAlt />
                   </IconButton>
                 </Box>
               </TableCell>
