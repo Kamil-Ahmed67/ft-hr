@@ -70,7 +70,7 @@ function MonthlyEmployeeAttendanceChart() {
 function YearlyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-lg bg-white border-white"
+      className="border-2 shadow-md rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",

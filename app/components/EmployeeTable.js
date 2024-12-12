@@ -226,6 +226,7 @@ export default function EmployeeTable() {
       sx={{
         maxHeight: 500,
         overflow: 'auto',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
         '&::-webkit-scrollbar': {
           display: 'none', // Hide scrollbar in Webkit browsers
         },
@@ -239,7 +240,7 @@ export default function EmployeeTable() {
               position: "sticky",
               top: 0,
               zIndex: 1,
-              backgroundColor: "#CAD0FE",
+              backgroundColor: "#DAE1F3",
               fontWeight: "bold",
             }}
           >
@@ -255,12 +256,13 @@ export default function EmployeeTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((row,index) => (
+          {tableData.map((row, index) => (
             <TableRow
               key={row.id}
               sx={{
-                backgroundColor: index % 2 === 0 ? '#f4f4f9' : '#ffffff', // Alternating row colors
-                "&:last-child td, &:last-child th": { border: 0 }
+                backgroundColor: '#ffffff', 
+                "&:hover": { backgroundColor: '#f0f0f0' }, // Add hover effect
+                "&:last-child td, &:last-child th": { border: 0 },
               }}
             >
               <TableCell sx={{ textAlign: 'center' }}>{row.id}</TableCell>
@@ -275,8 +277,8 @@ export default function EmployeeTable() {
                 <Box
                   sx={{
                     display: 'flex',
-                    gap: 1, // Add spacing between buttons
-                    justifyContent: 'center', // Center buttons horizontally
+                    gap: 1,
+                    justifyContent: 'center',
                   }}
                 >
                   <IconButton
@@ -301,7 +303,7 @@ export default function EmployeeTable() {
                     color="error"
                     onClick={() => console.log("Delete", row.id)}
                   >
-                  <FaRegTrashAlt />
+                    <FaRegTrashAlt />
                   </IconButton>
                 </Box>
               </TableCell>
