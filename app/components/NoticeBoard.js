@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import { blue, red, green } from '@mui/material/colors';
 
@@ -31,7 +30,18 @@ const notices = [
 ];
 
 const NoticeCard = ({ title, description, date, onEdit, onDelete, onView }) => (
-  <Card sx={{ display: 'flex', flexDirection: 'column', marginBottom: 2 }}>
+  <Card
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      marginBottom: 2,
+      backgroundColor: '#f0f4f8',
+      transition: 'background-color 0.3s', 
+      '&:hover': {
+        backgroundColor: '#e0e7ed', // Hover effect color
+      },
+    }}
+  >
     <CardContent sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Box>
         <Typography variant="h6">{title}</Typography>

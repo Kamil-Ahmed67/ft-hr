@@ -44,7 +44,7 @@ export default function EmployeeEntry() {
                             <div>
                                 <label className="block text-sm font-medium mb-1">Date of Joining *</label>
                                 <input
-                                    type="text"
+                                    type="date"
                                     className="w-full border rounded-md p-2"
                                     placeholder="DD-MM-YYYY"
                                 />
@@ -80,7 +80,7 @@ export default function EmployeeEntry() {
                             <div>
                                 <label className="block text-sm font-medium mb-1">Date of Birth *</label>
                                 <input
-                                    type="text"
+                                    type='date'
                                     className="w-full border rounded-md p-2"
                                     placeholder="DD-MM-YYYY"
                                 />

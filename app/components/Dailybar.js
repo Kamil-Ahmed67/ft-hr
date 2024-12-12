@@ -104,7 +104,7 @@ export default function AttendanceDashboard() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <div
         className={`absolute z-10 bg-white ${
           isSidebarCollapsed ? "top-3 right-2" : "top-3 right-12"

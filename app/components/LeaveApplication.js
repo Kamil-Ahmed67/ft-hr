@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function LeaveApplication() {
     return (
-        <div className="bg-white border-2 border-gray-200 rounded-lg  shadow-md max-h-[660px] overflow-y-auto px-4">
+        <div className="bg-white border-2 border-gray-200 rounded-lg shadow-md max-h-[660px] overflow-auto px-4 custom-scroll">
             <div className="sticky top-0 bg-white z-10">
                 <h2 className="text-xl flex justify-start font-bold text-gray-700 p-4 mb-4">Leave Applications</h2>
             </div>
-            <div className='mb-4'>
+            <div className="mb-4">
                 <div className="space-y-4">
                     {[...Array(8)].map((_, index) => (
                         <div
@@ -14,7 +14,7 @@ export default function LeaveApplication() {
                             className="flex cursor-pointer items-center justify-between bg-blue-100 p-4 rounded-lg"
                         >
                             <div className="flex items-center space-x-4">
-                                <div className="w-10 h-10  bg-red-200 rounded-full"></div>
+                                <div className="w-10 h-10 bg-red-200 rounded-full"></div>
                                 <div>
                                     <p className="text-gray-800 font-semibold">
                                         Maisha Lucy Zamora Gonzales
@@ -29,7 +29,17 @@ export default function LeaveApplication() {
                     ))}
                 </div>
             </div>
+            <style>
+                {`
+                    .custom-scroll::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .custom-scroll {
+                        -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+                        scrollbar-width: none;  /* For Firefox */
+                    }
+                `}
+            </style>
         </div>
-
     );
 }

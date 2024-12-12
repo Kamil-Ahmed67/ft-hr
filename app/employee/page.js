@@ -5,14 +5,14 @@ import EmployeeTable from "../components/EmployeeTable";
 import Link from "next/link";
 export default function Employee() {
   return (
-    <div>
+    <div className="bg-slate-40">
       {/* TITLE.ADD EMPLOYEE*/}
       <div className="border-b-2">
-        <div className="w-11/12 mx-auto flex justify-between items-center mt-4 py-4 ">
-          <h3 className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium ">Employee List</h3>
+        <div className="w-11/12 mx-auto flex justify-between items-center  py-4 ">
+          <h3 className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium mt-4 ">Employee List</h3>
           <Link href="/employee-entry">
-            <button className="btn rounded-md bg-[#CAD0FE] hover:text-blue-800 text-gray-800 transition ease-out duration-700 
-           font-medium text-sm md:text-base lg:text-lg mb-4">
+            <button className="btn rounded-md bg-[#CAD0FE] hover:text-blue-800 mt-4 text-gray-800 transition ease-out duration-700 
+           font-medium text-sm md:text-base lg:text-lg">
               <IoMdAddCircleOutline className="text-xl" />
               Add Employee</button>
           </Link>
@@ -54,7 +54,7 @@ export default function Employee() {
         </div>
       </div>
       {/* TABLE */}
-      <div className="mt-8 w-11/12 mx-auto">
+      <div className="mt-8 w-11/12 mx-auto mb-4">
         <EmployeeTable></EmployeeTable>
       </div>
     </div>

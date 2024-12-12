@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <header  className="sticky top-0 z-50">
               <Navbar></Navbar>
             </header>
-            <main className="min-h-[calc(200vh-232px)]">
+            <main>
               {children}
             </main>
             <footer>

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import {
   AiOutlineMenu,
   AiOutlineDashboard,
@@ -10,47 +10,47 @@ import {
   AiOutlineSetting,
   AiOutlineUser,
   AiOutlineDown,
-} from 'react-icons/ai';
-import { GrTrophy } from 'react-icons/gr';
-import { HiOutlineUserGroup } from 'react-icons/hi';
-import { GoSidebarCollapse } from 'react-icons/go';
+} from "react-icons/ai";
+import { GrTrophy } from "react-icons/gr";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { GoSidebarCollapse } from "react-icons/go";
 
 const navElements = [
   {
-    title: 'Dashboard',
-    href: '/',
+    title: "Dashboard",
+    href: "/",
     icon: <AiOutlineDashboard className="w-6 h-6" />,
     dropdown: false,
   },
   {
-    title: 'Attendance',
-    href: '/profile',
+    title: "Attendance",
+    href: "/profile",
     icon: <AiOutlineUser className="w-6 h-6" />,
     dropdown: false,
   },
   {
-    title: 'Award',
-    href: '/award',
+    title: "Award",
+    href: "/award",
     icon: <GrTrophy className="w-6 h-6" />,
     dropdown: true,
     subMenu: [
-      { title: 'Annual Awards', href: '/award/annual' },
-      { title: 'Employee of the Month', href: '/award/monthly' },
+      { title: "Annual Awards", href: "/award/annual" },
+      { title: "Employee of the Month", href: "/award/monthly" },
     ],
   },
   {
-    title: 'Employee',
-    href: '/employee',
+    title: "Employee",
+    href: "/employee",
     icon: <HiOutlineUserGroup className="w-6 h-6" />,
     dropdown: true,
     subMenu: [
-      { title: 'Employee List', href: '/employee' },
-      { title: 'Add Employee', href: '/employee/add' },
+      { title: "Employee List", href: "/employee" },
+      { title: "Add Employee", href: "/employee/add" },
     ],
   },
   {
-    title: 'Settings',
-    href: '/settings',
+    title: "Settings",
+    href: "/settings",
     icon: <AiOutlineSetting className="w-6 h-6" />,
     dropdown: false,
   },
@@ -67,7 +67,7 @@ const Sidebar = () => {
   return (
     <div
       className={`min-h-screen bg-gradient-to-l from-[#F3E7E9] to-[#E3EEFF] text-gray-700 flex flex-col sticky top-0 ${
-        isCollapsed ? 'w-20' : 'w-64'
+        isCollapsed ? "w-20" : "w-64"
       } transition-all duration-300 ease-in-out`}
     >
       {/* Header */}
@@ -81,49 +81,53 @@ const Sidebar = () => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="text-gray-700 focus:outline-none"
         >
-          {isCollapsed ? <AiOutlineMenu className='ml-2' size={24} /> : <GoSidebarCollapse size={24} />}
+          {isCollapsed ? <AiOutlineMenu className="ml-2" size={24} /> : <GoSidebarCollapse size={24} />}
         </button>
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 mt-6 space-y-2">
         {navElements.map((navElement, index) => (
-          <div key={navElement.title}>
+          <div key={navElement.title} className="relative group">
             <div
               className={`flex items-center py-4 px-4 cursor-pointer transition duration-700 ease-in-out hover:bg-gray-300 hover:text-blue-800 ${
-                isCollapsed ? 'justify-center' : ''
+                isCollapsed ? "justify-center" : ""
               }`}
-              onClick={() => (navElement.dropdown ? toggleDropdown(index) : null)}
+              onClick={() => !isCollapsed && navElement.dropdown ? toggleDropdown(index) : null}
             >
-              {navElement.icon}
-              {!isCollapsed && (
-                <span className="ml-4 text-lg">{navElement.title}</span>
-              )}
-              {navElement.dropdown && !isCollapsed && (
-                <AiOutlineDown
-                  className={`ml-2 transition-transform duration-300 ease-in-out ${
-                    activeDropdown === index ? 'rotate-180' : ''
-                  }`}
-                  style={{
-                    transformOrigin: 'center',
-                  }}
-                />
-              )}
+              <div className="flex items-center justify-between w-full">
+                <div className="flex ml-2 items-center">
+                  {navElement.icon}
+                  {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
+                </div>
+                {navElement.dropdown && !isCollapsed && (
+                  <AiOutlineDown
+                    className={`ml-2 transition-transform duration-300 ease-in-out ${
+                      activeDropdown === index ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
+              </div>
             </div>
-            {navElement.dropdown && activeDropdown === index && (
+
+            {isCollapsed && (
+              <div className="absolute left-20 top-1 z-50 bg-gray-100 text-gray-700 px-2 py-1 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                {navElement.title}
+              </div>
+            )}
+
+            {/* Submenu (if dropdown is active) */}
+            {navElement.dropdown && !isCollapsed && (
               <div
-                className="ml-8 mt-2 space-y-2 overflow-hidden transition-all duration-300 ease-in-out"
-                style={{
-                  height: activeDropdown === index ? 'auto' : '0px',
-                  paddingTop: activeDropdown === index ? '10px' : '0',
-                  paddingBottom: activeDropdown === index ? '10px' : '0',
-                }}
+                className={`ml-8 mt-2 space-y-2 overflow-hidden transition-all duration-1000 ease-in-out ${
+                  activeDropdown === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                }`}
               >
                 {navElement.subMenu.map((subItem) => (
                   <Link
                     href={subItem.href}
                     key={subItem.title}
-                    className="block text-sm text-gray-700 hover:text-blue-800"
+                    className="block text-base p-2 w-full text-gray-700 hover:text-blue-800 hover:bg-slate-300"
                   >
                     {subItem.title}
                   </Link>
@@ -138,7 +142,7 @@ const Sidebar = () => {
       <div className="mb-6">
         <button
           className={`flex items-center py-2 px-4 w-full text-left rounded-md transition duration-300 ease-in-out hover:bg-red-700 hover:text-white ${
-            isCollapsed ? 'justify-center' : ''
+            isCollapsed ? "justify-center" : ""
           }`}
         >
           <AiOutlineLogout className="w-6 h-6" />
