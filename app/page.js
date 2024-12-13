@@ -9,10 +9,10 @@ const NoticeBoard = dynamic(() => import("./components/NoticeBoard"));
 export default function Home() {
   return (
     <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-[#ECF0F4] ">
-      <div className="w-11/12 mx-auto mt-10">
+      <div className="w-11/12 mx-auto mt-8">
         <AttendanceCards></AttendanceCards>
       </div>
-      <div className="w-11/12 flex flex-col lg:flex-row gap-5 mx-auto mt-3">
+      <div className="w-11/12 flex flex-col lg:flex-row gap-5 mx-auto mt-1">
         <div className="w-3/5">
           <div className="rounded-lg shadow-sm"><BasicBars></BasicBars></div>
           <div className="flex mt-4 border-2 p-2 space-x-4 bg-white shadow-lg border-white  rounded-lg">
@@ -25,8 +25,9 @@ export default function Home() {
           <LeaveApplication></LeaveApplication>
         </div>
       </div>
-      <div className="w-full lg:w-11/12 mx-auto mt-1">
-        <div>
+      <div className="w-full lg:w-11/12 mx-auto mt-6 mb-4">
+        <div className="bg-white rounded-lg p-2 shadow-xl">
+        <h3 className="text-2xl font-semibold text-gray-800 p-2 mb-5">Notice Board</h3>
           <NoticeBoard></NoticeBoard>
         </div>
       </div>

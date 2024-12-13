@@ -8,9 +8,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import IconButton from '@mui/material/IconButton';
-import { FaEye, FaEdit, FaPrint } from 'react-icons/fa';
+import { FaEye, FaEdit } from 'react-icons/fa';
 import { FaRegTrashAlt } from "react-icons/fa";
 import Box from '@mui/material/Box';
+import Link from 'next/link';
 
 const tableData = [
   {
@@ -228,9 +229,9 @@ export default function EmployeeTable() {
         overflow: 'auto',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
         '&::-webkit-scrollbar': {
-          display: 'none', // Hide scrollbar in Webkit browsers
+          display: 'none', // Hiding scrollbar in Webkit browsers
         },
-        scrollbarWidth: 'none', // Hide scrollbar in Firefox
+        scrollbarWidth: 'none', // Hiding scrollbar in Firefox
       }}
     >
       <Table aria-label="employee-table">
@@ -242,7 +243,7 @@ export default function EmployeeTable() {
               zIndex: 1,
               backgroundColor: "#DAE1F3",
               fontWeight: "bold",
-              fontSize: "1rem", // Adjust the size as needed
+              fontSize: "1rem",
             }}
           >
             <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1rem' }}>SI</TableCell>
@@ -282,37 +283,30 @@ export default function EmployeeTable() {
                     justifyContent: 'center',
                   }}
                 >
-                  <IconButton
-                    color="primary"
-                    onClick={() => console.log("View", row.id)}
-                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
-                  >
-                    <FaEye />
-                  </IconButton>
+                  <Link href={`/employee/${row.id}`} passHref>
+                    <IconButton
+                      color="primary"
+                      sx={{ padding: 0.5, fontSize: '1rem' }}
+                    >
+                      <FaEye />
+                    </IconButton>
+                  </Link>
                   <IconButton
                     color="success"
                     onClick={() => console.log("Edit", row.id)}
-                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
+                    sx={{ padding: 0.5, fontSize: '1rem' }}
                   >
                     <FaEdit />
                   </IconButton>
                   <IconButton
-                    color="info"
-                    onClick={() => console.log("Print", row.id)}
-                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
-                  >
-                    <FaPrint />
-                  </IconButton>
-                  <IconButton
                     color="error"
                     onClick={() => console.log("Delete", row.id)}
-                    sx={{ padding: 0.5, fontSize: '1rem' }} // Reduced padding and smaller icon size
+                    sx={{ padding: 0.5, fontSize: '1rem' }}
                   >
                     <FaRegTrashAlt />
                   </IconButton>
                 </Box>
               </TableCell>
-
             </TableRow>
           ))}
         </TableBody>
