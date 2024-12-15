@@ -31,7 +31,7 @@ export default function MonthlyCasualAbsent() {
         series={[{ data: formattedData }]} // Use formatted data with arcLabel
         {...pieParams}
       />
-      <Typography className='text-gray-600'>Monthly Casual Absent</Typography>
+      <Typography className='text-gray-600 text-sm'>Monthly Casual Absent</Typography>
     </Box>
   );
 }

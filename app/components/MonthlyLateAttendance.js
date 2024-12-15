@@ -31,7 +31,7 @@ export default function MonthlyLateAttendance() {
         series={[{ data: formattedData }]} // Use formatted data with arcLabel
         {...pieParams}
       />
-      <Typography className='text-gray-600'>Monthly Late Attendance</Typography>
+      <Typography className='text-gray-600 text-sm'>Monthly Late Attendance</Typography>
     </Box>
   );
 }

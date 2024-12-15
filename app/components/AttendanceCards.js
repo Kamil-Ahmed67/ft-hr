@@ -11,7 +11,7 @@ export default function AttendanceCards() {
                         <span className="text-xl md:text-2xl lg:text-3xl text-gray-50 font-bold text-center">1200</span>
                     </div>
                     {/* Card Content */}
-                    <div className="p-6 mt-12">
+                    <div className="p-3 mt-12">
                         <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800">Total Employee</h2>
                         <div className="divider"></div>
                     </div>
@@ -25,7 +25,7 @@ export default function AttendanceCards() {
                     <span className="text-xl md:text-2xl lg:text-3xl text-gray-50 font-bold text-center">1000</span>
                 </div>
                 {/* Card Content */}
-                <div className="p-6 mt-12">
+                <div className="p-3 mt-12">
                     <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800">Present Today</h2>
                     <div className="divider"></div>
                 </div>
@@ -38,7 +38,7 @@ export default function AttendanceCards() {
                     <span className="text-xl md:text-2xl lg:text-3xl text-gray-50 font-bold text-center">100</span>
                 </div>
                 {/* Card Content */}
-                <div className="p-6 mt-12">
+                <div className="p-3 mt-12">
                     <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800">Absent Today</h2>
                     <div className="divider"></div>
                 </div>

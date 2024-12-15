@@ -257,13 +257,13 @@ export default function EmployeeTable() {
             />
           </div>
           <div className='flex justify-between items-center gap-4'>
-            <Link href="/employee-entry" title="Add New Employee">
-              <IoMdAddCircleOutline className="text-2xl text-green-600" />
+            <Link href="/employee-entry" className="tooltip z-10 tooltip-bottom" data-tip="Add New Employee">
+              <IoMdAddCircleOutline className="text-2xl text-blue-800" />
             </Link>
-            <div title="Refresh Table" >
+            <div className="tooltip z-10 tooltip-bottom" data-tip="Refresh Table" >
               <FaRedo className="text-lg text-gray-700 cursor-pointer" />
             </div>
-            <div title="Download Excel File">
+            <div className="tooltip z-50 tooltip-bottom" data-tip="Download">
               <FaFileExcel className="text-xl text-[#2A954B] cursor-pointer" />
             </div>
           </div>
