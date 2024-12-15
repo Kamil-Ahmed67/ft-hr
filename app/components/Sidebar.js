@@ -131,9 +131,9 @@ const Sidebar = () => {
               {!isCollapsed && <span className="ml-4 text-lg">{navElement.title}</span>}
             </div>
             {isCollapsed && (
-              <span className="absolute left-full ml-2 bg-white text-gray-700 p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                {navElement.title}
-              </span>
+              <span className="absolute left-full ml-2 bg-white text-gray-700 p-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-50">
+              {navElement.title}
+            </span>
             )}
           </div>
         </Link>

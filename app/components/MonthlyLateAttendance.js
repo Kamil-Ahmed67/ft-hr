@@ -28,7 +28,7 @@ export default function MonthlyLateAttendance() {
   return (
     <Box width="100%" textAlign="center">
       <PieChart
-        series={[{ data: formattedData }]} // Use formatted data with arcLabel
+        series={[{ data: formattedData }]} 
         {...pieParams}
       />
       <Typography className='text-gray-600 text-sm'>Monthly Late Attendance</Typography>

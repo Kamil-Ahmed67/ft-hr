@@ -24,7 +24,7 @@ export default function EmployeeEntry() {
         <div className='bg-[#ECF0F4]'>
             {/* TITLE: ADD EMPLOYEE */}
             <div className="border-b-2 sticky top-0 bg-white/30 backdrop-blur-xl z-10 shadow-md">
-                <div className="w-11/12 mx-auto flex justify-between items-center  py-4">
+                <div className="w-[96%] mx-auto flex justify-between items-center  py-4">
                     <h3 className="text-base md:text-lg lg:text-xl text-gray-700 font-medium">Add Employee</h3>
                     <Link href="/employee">
                         <button className="flex items-center space-x-2 rounded-md bg-[#CAD0FE] hover:text-blue-800 text-gray-800 transition ease-out duration-700 hover:bg-gray-300 font-medium text-sm md:text-sm lg:text-base px-3 py-2">

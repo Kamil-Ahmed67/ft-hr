@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function LeaveApplication() {
     return (
-        <div className="bg-white border-2 border-gray-200 rounded-lg shadow-md max-h-[612px] overflow-auto px-4 custom-scroll">
+        <div className="bg-white border-2 border-gray-200 rounded-lg shadow-md max-h-[610px] overflow-auto px-4 custom-scroll">
             <div className="sticky top-0 bg-white z-10">
                 <h2 className="text-xl flex justify-start font-bold text-gray-700 p-4 mb-4">Leave Applications</h2>
             </div>

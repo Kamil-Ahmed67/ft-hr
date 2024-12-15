@@ -247,9 +247,8 @@ export default function EmployeeTable() {
           <div className='flex items-center gap-2'>
             <h3 className='text-base font-semibold text-gray-700'>Employees</h3>
             <TextField
-              className='bg-white'
+              className='bg-white rounded-md'
               label="Search"
-              variant="outlined"
               size="small"
               onChange={(e) => setSearchTerm(e.target.value)}
               value={searchTerm}

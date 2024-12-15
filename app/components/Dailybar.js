@@ -10,15 +10,8 @@ function WeeklyEmployeeAttendanceChart() {
       xAxis={[
         {
           scaleType: "band",
-          data: [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
+          data: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
+          spacing: 10,
         },
       ]}
       series={[
@@ -72,7 +65,7 @@ function YearlyEmployeeAttendanceChart() {
       xAxis={[
         {
           scaleType: "band",
-          data: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         },
       ]}
       series={[
