@@ -33,8 +33,7 @@ function WeeklyEmployeeAttendanceChart() {
           style: { fill: "#f44336" },
         },
       ]}
-      width={700}
-      height={400}
+      height={350}
     />
   );
 }
@@ -61,8 +60,7 @@ function MonthlyEmployeeAttendanceChart() {
           style: { fill: "#f44336" },
         },
       ]}
-      width={700}
-      height={400}
+      height={350}
     />
   );
 }
@@ -89,8 +87,7 @@ function YearlyEmployeeAttendanceChart() {
           style: { fill: "#f44336" },
         },
       ]}
-      width={700}
-      height={400}
+      height={350}
     />
   );
 }
