@@ -21,10 +21,10 @@ export default function EmployeeEntry() {
         reader.readAsDataURL(selectedFile);
     };
     return (
-        <div>
+        <div className='bg-[#ECF0F4]'>
             {/* TITLE: ADD EMPLOYEE */}
             <div className="border-b-2 sticky top-0 bg-white/30 backdrop-blur-xl z-10 shadow-md">
-                <div className="w-11/12 mx-auto flex justify-between items-center mt-4 py-4">
+                <div className="w-11/12 mx-auto flex justify-between items-center  py-4">
                     <h3 className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">Add Employee</h3>
                     <Link href="/employee">
                         <button className="flex items-center space-x-2 rounded-md bg-[#CAD0FE] hover:text-blue-800 text-gray-800 transition ease-out duration-700 font-medium text-sm md:text-base lg:text-lg px-4 py-2">
@@ -281,14 +281,14 @@ export default function EmployeeEntry() {
                     </div>
 
                     {/* BUTTONS */}
-                    <div className="flex space-x-4 justify-end">
+                    {/* <div className="flex space-x-4 justify-end">
                         <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
                             Add Profile
                         </button>
                         <button className="bg-gray-400 text-white px-4 py-2 rounded-md">
                             Reset All
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

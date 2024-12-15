@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <header  className="sticky top-0 z-50">
               <Navbar></Navbar>
             </header>
-            <main>
+            <main className="bg-[#ECF0F4]">
               {children}
             </main>
             <footer>
