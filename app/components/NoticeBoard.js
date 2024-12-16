@@ -23,7 +23,7 @@ const notices = [
   },
   {
     id: 3,
-    title: 'Holiday Announcement',
+    title: 'Holidayy Announcement',
     description: 'We are closed for the holidays from December 24 to January 2.',
     date: '2024-12-09',
   },
