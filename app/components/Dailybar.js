@@ -6,7 +6,7 @@ import { useState } from "react";
 function WeeklyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-lg bg-white border-white"
+      className="border-2 font-roboto rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -34,7 +34,7 @@ function WeeklyEmployeeAttendanceChart() {
 function MonthlyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 rounded-lg bg-white border-white"
+      className="border-2 font-roboto rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -61,7 +61,7 @@ function MonthlyEmployeeAttendanceChart() {
 function YearlyEmployeeAttendanceChart() {
   return (
     <BarChart
-      className="border-2 shadow-md rounded-lg bg-white border-white"
+      className="border-2 font-roboto shadow-md rounded-lg bg-white border-white"
       xAxis={[
         {
           scaleType: "band",
@@ -94,20 +94,18 @@ export default function AttendanceDashboard() {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative font-roboto">
       <div
-        className={`absolute z-10 bg-white ${
-          isSidebarCollapsed ? "top-3 right-2" : "top-3 right-12"
-        }`}
+        className={`absolute z-10 bg-white ${isSidebarCollapsed ? "top-3 right-2" : "top-3 right-14"}`}
       >
         <select
-          className="border rounded px-2 py-1"
+          className="border rounded px-1 lg:px-2 py-1"
           onChange={(e) => handleViewChange(e.target.value)}
           value={view}
         >
-          <option value="weekly">Daily</option>
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
+          <option className=" text-xs lg:text-base" value="weekly">Daily</option>
+          <option className=" text-xs lg:text-base" value="monthly">Monthly</option>
+          <option className=" text-xs lg:text-base" value="yearly">Yearly</option>
         </select>
       </div>
 

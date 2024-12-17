@@ -71,7 +71,7 @@ const Sidebar = () => {
       } transition-all duration-300 ease-in-out`}
     >
       {/* Header */}
-      <div className="flex items-center justify-between h-16 bg-white border-b border-gray-300 p-4">
+      <div className="flex font-roboto items-center justify-between h-16 bg-white border-b border-gray-300 p-4">
         {!isCollapsed && (
           <Link href="/">
             <Image src="/images/ftex-logo.png" alt="Ftex Logo" width={150} height={30} />
@@ -87,7 +87,7 @@ const Sidebar = () => {
 
       {/* Navigation */}
       <nav
-  className={`flex-1 mt-6 space-y-2 ${
+  className={`flex-1 font-roboto mt-6 space-y-2 ${
     isCollapsed ? "flex flex-col items-center" : ""
   }`}
 >
@@ -161,7 +161,7 @@ const Sidebar = () => {
 </nav>
 
       {/* Footer */}
-      <div className="mb-6">
+      <div className="mb-6 font-roboto">
         <button
           className={`flex items-center py-2 px-4 w-full text-left rounded-md transition duration-300 ease-in-out hover:bg-red-700 hover:text-white ${
             isCollapsed ? "justify-center" : ""

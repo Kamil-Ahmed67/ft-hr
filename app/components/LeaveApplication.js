@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function LeaveApplication() {
     return (
-        <div className="bg-white border-2 border-gray-200 rounded-lg shadow-md max-h-[610px] overflow-auto px-4 custom-scroll">
+        <div className="bg-white font-roboto border-2 border-gray-200 rounded-lg shadow-md max-h-[610px] overflow-auto  custom-scroll">
             <div className="sticky top-0 bg-white z-10">
-                <h2 className="text-xl flex justify-start font-bold text-gray-700 p-4 mb-4">Leave Applications</h2>
+                <h2 className="text-xl flex justify-start border-b border-gray-300 font-bold text-gray-700 p-4 mb-4">Leave Applications</h2>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 px-4">
                 <div className="space-y-4">
                     {[...Array(8)].map((_, index) => (
                         <div

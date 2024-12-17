@@ -24,7 +24,7 @@ export default function MonthlySickAbsent() {
         series={[{ data: formattedData }]}
         {...pieParams}
       />
-      <Typography className='text-gray-600 text-sm'>Monthly Sick Absent</Typography>
+      <Typography className='text-gray-600 font-roboto  text-xs lg:text-sm'>Monthly Sick Absent</Typography>
     </Box>
   );
 }

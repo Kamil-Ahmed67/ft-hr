@@ -31,7 +31,7 @@ export default function MonthlyLateAttendance() {
         series={[{ data: formattedData }]} 
         {...pieParams}
       />
-      <Typography className='text-gray-600 text-sm'>Monthly Late Attendance</Typography>
+      <Typography className='text-gray-600 font-roboto  text-xs lg:text-sm'>Monthly Late Attendance</Typography>
     </Box>
   );
 }

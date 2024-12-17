@@ -31,7 +31,7 @@ export default function MonthlyCasualAbsent() {
         series={[{ data: formattedData }]} 
         {...pieParams}
       />
-      <Typography className='text-gray-600 text-sm'>Monthly Casual Absent</Typography>
+      <Typography className='text-gray-600 font-roboto text-xs lg:text-sm'>Monthly Casual Absent</Typography>
     </Box>
   );
 }

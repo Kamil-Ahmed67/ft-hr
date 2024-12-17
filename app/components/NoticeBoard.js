@@ -33,6 +33,7 @@ const NoticeCard = ({ title, description, date, onEdit, onDelete, onView }) => (
   <Card
     sx={{
       display: 'flex',
+      fontFamily:'roboto',
       flexDirection: 'column',
       marginBottom: 2,
       backgroundColor: '#FFFFFF',
@@ -71,7 +72,7 @@ const NoticeCard = ({ title, description, date, onEdit, onDelete, onView }) => (
 const NoticeBoard = () => (
   <Box sx={{ maxHeight: 400, overflowY: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
     <div className="sticky top-0 bg-white z-10">
-      <h2 className="text-xl flex justify-start font-bold text-gray-700 p-4 mb-4">Notice Board</h2>
+      <h2 className="text-xl flex justify-start font-semibold border-b border-gray-300 text-gray-700 p-4 mb-4">Notice Board</h2>
     </div>
     {notices.map((notice) => (
       <NoticeCard 
